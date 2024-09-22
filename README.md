@@ -1,4 +1,4 @@
-# This project is a comprehensive suite of convention plugins that drastically simplify gradle management in multi module applications.
+## This project is a comprehensive suite of convention plugins that drastically simplify gradle management in multi module applications.
 
 ## It includes plugins for the following configuration applications:
 - Android application config
@@ -19,17 +19,17 @@
 - Easing the automation of build tasks
 
   
-How to use:
+## How to use:
 
 This repository contains the build-logic module by itself as well as a sample project that you can use as a reference during the set up process.
 
-Step 1:
+## Step 1:
   Clone the repository
 
-Step 2:
-  Copy the build-logic module and paste it into your projects root directory
+## Step 2:
+  Copy the `build-logic` module and paste it into your projects root directory
 
-Step 3:
+## Step 3:
   Add the necessary dependencies
   The build-logic module contains a variety of plugins by default and this setup guide assumes you want to keep / use all of them for the sake of simplicity. 
   The sample projects version catalog contains all of the needed dependencies along with versions that are guaranteed to work with each other. 
@@ -40,7 +40,7 @@ Step 3:
   
   
 
-Step 4:
+## Step 4:
   Add the convention plugins to your version catalog:
 
   yourapp-android-application = { id = "yourapp.android.application", version = "unspecified" }
@@ -90,7 +90,7 @@ Step 4:
   }
 
   
-Step 5:
+## Step 5:
 
   In order to make your porject recognize the build-logic module as a special build configuration module make sure it doesn't get added to your projects settings.gradle file
   
