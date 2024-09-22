@@ -36,6 +36,7 @@ This repository contains the build-logic module by itself as well as a sample pr
 
   Note that in order to access other modules using dot notation when adding them as a dependency like this:
   `implementation(projects.auth.domain)`
+ 
   You will need to add this line to your porjects settings.gradle file:
  `enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")`
   
