@@ -1,4 +1,4 @@
-This project is a comprehensive suite of convention plugins that drastically simplify gradle management in multi module applications.
+## This project is a comprehensive suite of convention plugins that drastically simplify gradle management in multi module applications.
 
 It includes plugins for the following configuration applications:
 - Android application config
