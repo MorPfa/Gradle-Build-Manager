@@ -1,6 +1,6 @@
-## This project is a comprehensive suite of convention plugins that drastically simplify gradle management in multi module applications.
+### This project is a comprehensive suite of convention plugins that drastically simplify gradle management in multi module applications.
 
-It includes plugins for the following configuration applications:
+## It includes plugins for the following configuration applications:
 - Android application config
 - Android application compose config
 - Android Wear os application config
@@ -12,7 +12,7 @@ It includes plugins for the following configuration applications:
 - JVM library config
 - JVM library with Ktor config
 
-These plugins simplify gradle management by:
+## These plugins simplify gradle management by:
 - Allowing you to consolidate the configuration logic of the build.gradle file in the relevant module into a couple lines of code
 - Preventing version inconsistencies in your dependencies since all plugins reference the version catalog directly
 - Ensuring consistency in your projects gradle setup across all modules
