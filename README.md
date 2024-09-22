@@ -31,12 +31,13 @@ This repository contains the build-logic module by itself as well as a sample pr
 
 ## Step 3:
   Add the necessary dependencies
-  The build-logic module contains a variety of plugins by default and this setup guide assumes you want to keep / use all of them for the sake of simplicity. 
+  The `build-logic` module contains a variety of plugins by default and this setup guide assumes you want to keep / use all of them for the sake of simplicity. 
   The sample projects version catalog contains all of the needed dependencies along with versions that are guaranteed to work with each other. 
 
-  Note that in order to access other modules using dot notation when adding them as a dependency like this: implementation(projects.auth.domain)
+  Note that in order to access other modules using dot notation when adding them as a dependency like this:
+  `implementation(projects.auth.domain)`
   You will need to add this line to your porjects settings.gradle file:
-  enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+ `enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")`
   
   
 
