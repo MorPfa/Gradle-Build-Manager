@@ -5,7 +5,6 @@ plugins {
 
 android {
     namespace = "lib.conventionplugins"
-    compileSdk = 34
 
     defaultConfig {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
