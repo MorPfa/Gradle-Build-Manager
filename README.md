@@ -13,9 +13,9 @@
 - JVM library with Ktor config
 
 ## These plugins simplify gradle management by:
-- Allowing you to consolidate the configuration logic of the `build.gradle` file in the relevant module into a couple lines of code
+- Allowing you to consolidate the configuration logic of the `build.gradle` file in the relevant module into a couple of lines of code
 - Preventing version inconsistencies in your dependencies since all plugins reference the version catalog directly
-- Ensuring consistency in your projects gradle setup across all modules
+- Ensuring consistency in your project's gradle setup across all modules
 - Easing the automation of build tasks
 
   
@@ -30,7 +30,7 @@ This repository contains the `build-logic` module by itself as well as a sample 
   Copy the `build-logic` module and paste it into your projects root directory
 
 ## Step 3:
-  Add the necessary dependencies
+  Add the necessary dependencies.
   The `build-logic` module contains a variety of plugins by default and this setup guide assumes you want to keep / use all of them for the sake of simplicity. 
   The sample projects version catalog contains all of the needed dependencies along with versions that are guaranteed to work with each other. 
 
@@ -109,7 +109,7 @@ This repository contains the `build-logic` module by itself as well as a sample 
 
 <br>
 
-  You will also need to add these to your projects class path by adding them to your project level `build.gradle` file like this: 
+  You will also need to add these to your project's class path by adding them to your project level `build.gradle` file like this: 
   
   ```kotlin
     plugins {
@@ -133,6 +133,49 @@ This repository contains the `build-logic` module by itself as well as a sample 
   You might encounter issues when rebuilding your project if you do not add this line to your projects `settings.gradle` file:
 
   `gradle.startParameter.excludedTaskNames.addAll(listOf(":build-logic:convention:testClasses"))`
+
+
+## Step 6:
+
+  Apply the desired convention plugins to your modules' `build.gradle` files like this: 
+
+  `alias(libs.plugins.yourapp.android.library)`
+  
+  `alias(libs.plugins.yourapp.android.room)`
+
+  After applying the convention plugin to your module you need to remove almost all gradle configurations from that module's `build.gradle` file or it will override the configuration applied by your convention plugin.
+  The only thing left in your `build.gradle` file should be these blocks:
+  - plugins | Needed to apply convention plugins
+  - android | Needed for the namespace attribute
+  - dependencies | Needed to specify the modules specific dependencies
+
+  This is an example of what it should look like: 
+
+ ```kotlin
+  plugins {
+    alias(libs.plugins.yourapp.android.library)
+    alias(libs.plugins.yourapp.jvm.ktor)
+}
+
+android {
+    namespace = "app.core.data"
+}
+
+dependencies {
+
+    implementation(libs.bundles.koin)
+    implementation(libs.timber)
+
+
+    implementation(projects.core.domain)
+    implementation(projects.core.database)
+
+
+    implementation(libs.androidx.espresso.core)
+    implementation(libs.androidx.junit)
+}
+``` 
+  
 
   
   
