@@ -174,7 +174,17 @@ dependencies {
     implementation(libs.androidx.espresso.core)
     implementation(libs.androidx.junit)
 }
-``` 
+```
+
+The only exception to this is your app module's `build.gradle` file which will need this:
+
+```kotlin
+ packaging {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+        }
+    }
+```
   
 
   
